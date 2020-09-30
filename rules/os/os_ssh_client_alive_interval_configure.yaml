@@ -28,9 +28,12 @@ references:
     - AOSX-14-000051
   800-171r2:
     - 3.13.9
+  iso27001:
+    - A.13.1.1
 macOS:
   - "10.15"
 tags:
+  - iso27001
   - 800-171
   - cnssi-1253
   - 800-53r4_moderate

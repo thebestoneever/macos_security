@@ -21,9 +21,12 @@ references:
   srg: 
     - SRG-OS-000066-GPOS-00034
     - SRG-OS-000478-GPOS-00223
+  iso27001:
+    - A.10.1.2
 macOS:
   - "10.15"
 tags:
+  - iso27001
   - cnssi-1253
   - 800-53r4_moderate
   - 800-53r4_high
