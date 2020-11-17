@@ -24,9 +24,13 @@ references:
     - AOSX-15-002021
   800-171r2:
     - 3.1.20
+  csf:
+    - ID.AM-4
+    - PR.AC-3
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

@@ -19,9 +19,12 @@ references:
     - N/A
   srg:
     - SRG-OS-000374-GPOS-00159
+  csf:
+    - PR.AC-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - STIG
   - permanent
 mobileconfig: false

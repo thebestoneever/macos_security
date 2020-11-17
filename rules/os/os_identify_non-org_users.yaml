@@ -17,9 +17,12 @@ references:
     - N/A
   srg:
     - SRG-OS-000121-GPOS-00062
+  csf:
+    - PR.AC-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - cnssi-1253
   - 800-53r4_low
   - 800-53r4_moderate

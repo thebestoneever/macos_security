@@ -53,9 +53,12 @@ references:
     - 3.5.8
     - 3.5.9
     - 3.5.10
+  csf:
+    - PR.AC-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

@@ -19,9 +19,12 @@ references:
     - N/A
   srg:
     - N/A
+  csf:
+    - PR.MA-2
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

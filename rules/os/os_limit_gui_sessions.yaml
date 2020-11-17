@@ -19,9 +19,12 @@ references:
     - N/A
   srg:
     - SRG-OS-000027-GPOS-00008
+  csf:
+    - PR.AC-4
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-53r4_high
   - STIG
   - inherent

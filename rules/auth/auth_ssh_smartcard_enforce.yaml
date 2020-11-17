@@ -56,9 +56,13 @@ references:
     - 3.5.2
     - 3.5.3
     - 3.7.5
+  csf:
+    - PR.AC-1
+    - PR.MA-2
 macOS:
   - "11.0"
 tags:
+  - csf
   - STIG
 mobileconfig: false
 mobileconfig_info:

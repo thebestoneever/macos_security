@@ -29,9 +29,12 @@ references:
   srg:
     - SRG-OS-000433-GPOS-00192
     - SRG-OS-000433-GPOS-00193
+  csf:
+    - PR.IP-2
 macOS:
   - "11.0"
 tags:
+  - csf
   - cnssi-1253
   - 800-53r4_moderate
   - 800-53r4_high

@@ -20,9 +20,12 @@ references:
     - N/A
   disa_stig:
     - N/A
+  csf:
+    - PR.DS-6
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-53r4_moderate
   - 800-53r4_high
 mobileconfig: false

@@ -71,9 +71,16 @@ references:
     - 3.3.8
     - 3.4.5
     - 3.13.4
+  csf:
+    - PR.AC-4
+    - PR.IP-1
+    - PR.PT-1
+    - PR.PT-3
+    - RS.AN-3
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

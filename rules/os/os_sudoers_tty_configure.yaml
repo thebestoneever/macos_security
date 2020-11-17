@@ -24,9 +24,12 @@ references:
     - SRG-OS-000480-GPOS-00227
   disa_stig:
     - AOSX-15-004021
+  csf:
+    - PR.AC-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - cnssi-1253
   - STIG
 mobileconfig: false

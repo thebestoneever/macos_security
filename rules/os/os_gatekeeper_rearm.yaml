@@ -22,9 +22,14 @@ references:
     - N/A
   800-171r2:
     - 3.4.5
+  csf:
+    - PR.IP-1
+    - DE.CM-4
+    - DE.DP-3
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_moderate

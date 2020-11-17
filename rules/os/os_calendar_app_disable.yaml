@@ -30,9 +30,15 @@ references:
   800-171r2:
     - 3.1.20
     - 3.4.6
+  csf:
+    - ID.AM-4
+    - PR.AC-3
+    - PR.IP-1
+    - PR.PT-3
 macOS:
     - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

@@ -31,9 +31,12 @@ references:
     - AOSX-15-000024
   800-171r2:
     - 3.1.9
+  csf:
+    - PR.AC-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - STIG
 mobileconfig: false
 mobileconfig_info:

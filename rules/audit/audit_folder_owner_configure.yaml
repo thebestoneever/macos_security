@@ -28,9 +28,12 @@ references:
     - AOSX-15-001013
   800-171r2:
     - 3.3.8
+  csf:
+    - PR.PT-1
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_low

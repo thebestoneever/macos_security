@@ -26,7 +26,15 @@ references:
     - CCI-000068
     - CCI-002418
   800-53r4: 
-    - N/A
+    - AC-17(2)
+    - AC-17(4)
+    - IA-2(8)
+    - IA-2(9)
+    - MA-4(6)
+    - MA-4
+    - SC-8
+    - SC-8(1)
+    - SC-8(2)
   srg: 
     - SRG-OS-000393-GPOS-00173
     - SRG-OS-000394-GPOS-00174
@@ -46,10 +54,19 @@ references:
     - AOSX-15-000011
     - AOSX-15-000010
   800-171r2:
-    - N/A
+    - 3.1.13
+    - 3.1.15
+    - 3.5.4
+    - 3.7.5
+    - 3.13.8
+  csf:
+    - PR.DS-2
+    - PR.DS-5
+    - PR.MA-2
 macOS:
   - "11.0"
 tags:
+  - csf
   - STIG
 mobileconfig: false
 mobileconfig_info:

@@ -26,9 +26,12 @@ references:
     - SRG-OS-000279-GPOS-00109
   800-171r2:
     - 3.1.11
+  csf:
+    - PR.AC-4
 macOS:
   - "11.0"
 tags:
+  - csf
   - 800-171
   - cnssi-1253
   - 800-53r4_moderate
