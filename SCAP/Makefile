@@ -1,10 +1,13 @@
 XSLT		= /usr/local/bin/saxon
 TIDY		= /usr/local/bin/tidy
-VAL		= java -Djava.protocol.handler.pkgs=sun.net.www.protocol -jar ~/Projects/scapval/scapval-1.3.5.jar
+VAL		= java -Djava.protocol.handler.pkgs=sun.net.www.protocol -jar /opt/scapval/scapval-1.3.5.jar
 
 DIR		= ../build/All_rules
 
 all: inputs tidy XCCDF datastream report
+
+clean:
+	rm ${DIR}/*
 
 inputs:
 	# generate the HTML checklist document
@@ -34,14 +37,10 @@ XCCDF:
 	       	-o:${DIR}/xccdf.xml \
 		SCAP-version=1.3 \
 		id-namespace=content.mscp.nist.gov \
-		benchmark-id-suffix=macOS_11.0 \
-		OVAL-URI=${DIR}/All_rules.xml \
-		include-CPE=1
-	# the input OVAL document will be copied to a companion of the XCCDF document named 'oval.xml'
-	# a gratuitous OCIL document is provided
-	cp ocil.xml                 ${DIR}
-	cp macos-cpe-dictionary.xml ${DIR}
-	cp macos-cpe-oval.xml       ${DIR}
+		include-CPE=1 \
+		CPE-dictionary-URI=macos-cpe-dictionary.xml \
+		CPE-OVAL-URI=macos-cpe-oval.xml \
+		OVAL-URI=${DIR}/All_rules.xml
 
 datastream:
 	# generate the SCAP data stream collection document
@@ -50,7 +49,6 @@ datastream:
 		-o:${DIR}/datastream.xml \
 		SCAP-version=1.3 \
 		id-namespace=content.mscp.nist.gov \
-		datastream-id-suffix=macOS_11.0 \
 		include-CPE=1
 
 report:
