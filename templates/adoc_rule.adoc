@@ -45,6 +45,11 @@ ifdef::show_STIG[]
 !$rule_disa_stig
 endif::[]
 
+ifdef::show_cjis[]
+!CJIS
+!$rule_cjis
+endif::[]
+
 !CCE
 !$rule_cce
 

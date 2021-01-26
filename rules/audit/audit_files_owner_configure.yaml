@@ -28,9 +28,12 @@ references:
     - AOSX-15-001012
   800-171r2:
     - 3.3.8
+  cjis:
+    - 5.4.5
 macOS:
   - "10.15"
 tags:
+  - cjis
   - 800-171
   - cnssi-1253
   - 800-53r4_low

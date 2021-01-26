@@ -36,9 +36,12 @@ references:
     - AOSX-15-004001
   800-171r2:
     - N/A
+  cjis:
+    - 5.10.4.4
 macOS:
   - "10.15"
 tags:
+  - cjis
   - manual
   - stig
 severity: "medium"

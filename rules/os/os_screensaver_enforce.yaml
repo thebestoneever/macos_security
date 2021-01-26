@@ -21,9 +21,12 @@ references:
     - AOSX-15-000006
   800-171r2:
     - N/A
+  cjis:
+    - 5.5.4
 macOS:
   - "10.15"
 tags:
+  - cjis
   - stig
 severity: "medium"
 mobileconfig: true
