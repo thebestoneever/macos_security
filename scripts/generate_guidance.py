@@ -23,7 +23,7 @@ from collections import namedtuple
 
 
 class MacSecurityRule():
-    def __init__(self, title, rule_id, severity, discussion, check, fix, cci, cce, nist_controls, nist_171, disa_stig, srg, tags, result_value, mobileconfig, mobileconfig_info):
+    def __init__(self, title, rule_id, severity, discussion, check, fix, cci, cce, nist_controls, nist_171, disa_stig, srg, cjis, tags, result_value, mobileconfig, mobileconfig_info):
         self.rule_title = title
         self.rule_id = rule_id
         self.rule_severity = severity
@@ -36,6 +36,7 @@ class MacSecurityRule():
         self.rule_800171 = nist_171
         self.rule_disa_stig = disa_stig
         self.rule_srg = srg
+        self.rule_cjis = cjis
         self.rule_result_value = result_value
         self.rule_tags = tags
         self.rule_mobileconfig = mobileconfig
@@ -55,6 +56,7 @@ class MacSecurityRule():
             rule_80053r4=self.rule_80053r4,
             rule_disa_stig=self.rule_disa_stig,
             rule_srg=self.rule_srg,
+            rule_cjis=self.rule_cjis,
             rule_result=self.rule_result_value
         )
         return rule_adoc
@@ -999,6 +1001,7 @@ def generate_xls(baseline_name, build_path, baseline_yaml):
     sheet1.write(0, 10, "SRG", headers)
     sheet1.write(0, 11, "DISA STIG", headers)
     sheet1.write(0, 12, "CCI", headers)
+    sheet1.write(0, 13, "CJIS", headers)
     sheet1.set_panes_frozen(True)
     sheet1.set_horz_split_pos(1)
     sheet1.set_vert_split_pos(2)
@@ -1081,6 +1084,12 @@ def generate_xls(baseline_name, build_path, baseline_yaml):
         sheet1.write(counter, 12, cci, topWrap)
         sheet1.col(12).width = 400 * 15
 
+        cjis_refs = (str(rule.rule_cjis)).strip('[]\'')
+        cjis_refs = cjis_refs.replace(", ", "\n").replace("\'", "")
+
+        sheet1.write(counter, 13, cjis_refs, topWrap)
+        sheet1.col(13).width = 400 * 15
+
         tall_style = xlwt.easyxf('font:height 640;')  # 36pt
 
         sheet1.row(counter).set_style(tall_style)
@@ -1110,7 +1119,8 @@ def create_rules(baseline_yaml):
                   'cce',
                   '800-53r4',
                   '800-171r2',
-                  'srg']
+                  'srg',
+                  'cjis']
 
 
     for sections in baseline_yaml['profile']:
@@ -1148,6 +1158,7 @@ def create_rules(baseline_yaml):
                                         rule_yaml['references']['800-171r2'],
                                         rule_yaml['references']['disa_stig'],
                                         rule_yaml['references']['srg'],
+                                        rule_yaml['references']['cjis'],
                                         rule_yaml['tags'],
                                         rule_yaml['result'],
                                         rule_yaml['mobileconfig'],
@@ -1341,14 +1352,20 @@ def main():
     else:
         adoc_tag_show=":show_tags!:"
 
-    if "STIG" in baseline_yaml['title']:
+    if "STIG" in baseline_yaml['title'].upper():
         adoc_STIG_show=":show_STIG:"
-        adoc_SRG_show=":show_SRG:"
     else:
         adoc_STIG_show=":show_STIG!:"
-        adoc_SRG_show=":show_SRG!:"
 
-    adoc_171_show=":show_171:"
+    if "CJIS" in baseline_yaml['title'].upper():
+        adoc_CJIS_show=":show_CJIS:"
+    else:
+        adoc_CJIS_show=":show_CJIS!:"
+
+    if "800" in baseline_yaml['title']:
+        adoc_171_show=":show_171:"
+    else:
+        adoc_171_show=":show_171!:"
 
     # Create header
     header_adoc = adoc_header_template.substitute(
@@ -1361,7 +1378,7 @@ def main():
         tag_attribute=adoc_tag_show,
         nist171_attribute=adoc_171_show,
         stig_attribute=adoc_STIG_show,
-        srg_attribute=adoc_SRG_show,
+        cjis_attribute=adoc_CJIS_show,
         version=version_yaml['version'],
         os_version=version_yaml['os'],
         release_date=version_yaml['date']
@@ -1471,6 +1488,13 @@ def main():
                 srg = ulify(rule_yaml['references']['srg'])
 
             try:
+                rule_yaml['references']['cjis']
+            except KeyError:
+                cjis = 'N/A'
+            else:
+                cjis = ulify(rule_yaml['references']['cjis'])
+
+            try:
                 rule_yaml['fix']
             except KeyError:
                 rulefix = "No fix Found"
@@ -1537,7 +1561,8 @@ def main():
                     rule_disa_stig=disa_stig,
                     rule_cce=cce,
                     rule_tags=tags,
-                    rule_srg=srg
+                    rule_srg=srg,
+                    rule_cjis=cjis
                 )
             else:
                 rule_adoc = adoc_rule_template.substitute(
@@ -1553,6 +1578,7 @@ def main():
                     rule_cce=cce,
                     rule_tags=tags,
                     rule_srg=srg,
+                    rule_cjis=cjis,
                     rule_result=result_value
                 )
 

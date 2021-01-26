@@ -36,6 +36,11 @@ ifdef::show_STIG[]
 !$rule_srg
 endif::[]
 
+ifdef::show_cjis[]
+!CJIS
+!$rule_cjis
+endif::[]
+
 ifdef::show_tags[]
 !CCE
 !$rule_cce
