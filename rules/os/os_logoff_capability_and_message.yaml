@@ -21,9 +21,12 @@ references:
   srg:
     - SRG-OS-000280-GPOS-00110
     - SRG-OS-000281-GPOS-00111
+  cjis:
+    - 5.5.2
 macOS:
   - "11.0"
 tags:
+  - cjis
   - inherent
 mobileconfig: false
 mobileconfig_info:

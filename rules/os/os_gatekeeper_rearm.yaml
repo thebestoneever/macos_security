@@ -22,9 +22,14 @@ references:
     - N/A
   800-171r2:
     - 3.4.5
+  cjis:
+    - 5.7.2
+    - 5.10.4.2
+    - 5.13.4.2
 macOS:
   - "11.0"
 tags:
+  - cjis
   - 800-171
   - cnssi-1253
   - 800-53r4_moderate

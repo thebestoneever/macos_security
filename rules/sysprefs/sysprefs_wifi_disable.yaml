@@ -29,9 +29,13 @@ references:
     - SRG-OS-000379-GPOS-00164
   800-171r2:
     - N/A
+  cjis:
+    - 5.10.1
+    - 5.13.1.4
 macOS:
   - "11.0"
 tags:
+  - cjis
   - stig
 severity: "medium"
 mobileconfig: false

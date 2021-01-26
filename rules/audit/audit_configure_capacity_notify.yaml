@@ -24,9 +24,12 @@ references:
     - SRG-OS-000343-GPOS-00134
   disa_stig: 
     - APPL-11-001030
+  cjis:
+    - 5.4.6
 macOS:
   - "11.0"
 tags:
+  - cjis
   - 800-53r4_high
   - stig
 severity: "medium"

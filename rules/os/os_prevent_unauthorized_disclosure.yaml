@@ -23,9 +23,14 @@ references:
     - SRG-OS-000138-GPOS-00069
   800-171r2:
     - 3.13.4
+  cjis:
+    - 5.10.3
+    - 5.10.3.1
+    - 5.10.3.2
 macOS:
   - "11.0"
 tags:
+  - cjis
   - 800-171
   - cnssi-1253
   - 800-53r4_moderate

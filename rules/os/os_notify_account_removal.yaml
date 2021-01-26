@@ -21,9 +21,15 @@ references:
     - N/A
   srg:
     - SRG-OS-000277-GPOS-00107
+  cjis:
+    - 5.5.2.1
+    - 5.5.2.2
+    - 5.5.2.3
+    - 5.5.2.4
 macOS:
   - "11.0"
 tags:
+  - cjis
   - cnssi-1253
   - 800-53r4_moderate
   - 800-53r4_high

@@ -27,9 +27,13 @@ references:
     - SRG-OS-000109-GPOS-00056
   disa_stig: 
     - APPL-11-001100
+  cjis:
+    - 5.6.1
+    - 5.13.7.1
 macOS:
   - "11.0"
 tags:
+  - cjis
   - stig
 severity: "medium"
 mobileconfig: false

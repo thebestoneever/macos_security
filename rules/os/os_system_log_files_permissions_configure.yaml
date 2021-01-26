@@ -31,9 +31,12 @@ references:
     - APPL-11-004002
   800-171r2:
     - N/A
+  cjis:
+    - 5.10.4.4
 macOS:
   - "11.0"
 tags:
+  - cjis
   - manual
   - stig
 severity: "medium"

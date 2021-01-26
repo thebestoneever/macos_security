@@ -20,9 +20,12 @@ references:
     - N/A
   disa_stig:
     - N/A
+  cjis:
+    - 5.10.1.3
 macOS:
   - "11.0"
 tags:
+  - cjis
   - 800-53r4_moderate
   - 800-53r4_high
 mobileconfig: false

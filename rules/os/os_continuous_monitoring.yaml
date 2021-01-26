@@ -17,9 +17,13 @@ references:
     - SRG-OS-000191-GPOS-00080
   disa_stig:
     - APPL-11-000015
+  cjis:
+    - 5.10.4.1
+    - 5.13.4.1
 macOS:
   - "11.0"
 tags:
+  - cjis
   - cnssi-1253
   - 800-53r4_moderate
   - 800-53r4_high

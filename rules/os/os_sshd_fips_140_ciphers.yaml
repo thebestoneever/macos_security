@@ -40,9 +40,16 @@ references:
     - 3.1.13
     - 3.13.8
     - 3.13.11
+  cjis:
+    - 5.10.1.2
+    - 5.10.1.2.1
+    - 5.10.1.2.2
+    - 5.10.1.2.3
+    - 5.10.1.5
 macOS:
   - "11.0"
 tags:
+  - cjis
   - stig
 severity: "medium"
 mobileconfig: false

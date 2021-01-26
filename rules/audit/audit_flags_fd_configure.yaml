@@ -44,9 +44,16 @@ references:
     - APPL-11-001020
   800-171r2:
     - N/A
+  cjis:
+    - 5.4.1
+    - 5.4.1.1
+    - 5.4.1.1.1
+    - 5.4.5
+    - 5.7.2
 macOS:
   - "11.0"
 tags:
+  - cjis
   - stig
 severity: "medium"
 mobileconfig: false
