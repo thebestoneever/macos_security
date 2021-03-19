@@ -33,6 +33,9 @@ tags:
   - cnssi-1253
   - 800-53r4_moderate
   - 800-53r4_high
-
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf    
+  - preliminary
 mobileconfig: false
 mobileconfig_info:

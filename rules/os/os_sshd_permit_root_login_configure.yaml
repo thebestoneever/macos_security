@@ -31,6 +31,10 @@ macOS:
   - "11.0"
 tags:
   - stig
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf    
+  - preliminary
 severity: "medium"
 mobileconfig: false
 mobileconfig_info:
