@@ -23,7 +23,9 @@ references:
     - APPL-11-000022
   800-171r2:
     - 3.1.8
-macOS:
+  800-63B:
+    - 5.1.1.2
+macos:
   - "11.0"
 tags:
   - 800-171
@@ -32,6 +34,10 @@ tags:
   - 800-53r4_moderate
   - 800-53r4_high
   - stig
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf    
+  - preliminary
 severity: "medium"
 mobileconfig: true
 mobileconfig_info:

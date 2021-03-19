@@ -1,0 +1,43 @@
+id: pwpolicy_minimum_length_enforce_8
+title: "Require a Minimum Password Length of 8 Characters"
+discussion: |
+  The macOS _MUST_ be configured to require a minimum of 8 characters be used when a password is created.
+
+  This rule enforces password complexity by requiring users to set passwords that are less vulnerable to malicious users. 
+check: |
+  /usr/bin/profiles -P -o stdout | /usr/bin/grep -c 'minLength = 8' 
+result:
+  integer: 1
+fix: |
+  This is implemented by a Configuration Profile.
+references:
+  cce:
+    - N/A
+  cci: 
+    - N/A
+  800-53r4: 
+    - CM-2
+    - IA-1
+    - IA-2
+      IA-4
+    - IA-5
+    - IA-5(1)
+  srg: 
+    - N/A
+  disa_stig: 
+    - N/A
+  800-171r2:
+    - N/A
+  800-63B:
+    - 5.1.1.2
+macOS:
+  - "11.0"
+tags:
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf
+  - preliminary
+mobileconfig: true
+mobileconfig_info:
+  com.apple.mobiledevice.passwordpolicy:
+    minLength: 8

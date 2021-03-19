@@ -29,7 +29,9 @@ references:
     - 3.5.8
     - 3.5.9
     - 3.5.10
-macOS:
+  800-63B:
+    - 5.1.1.2
+macos:
   - "11.0"
 tags:
   - 800-171
@@ -37,6 +39,10 @@ tags:
   - 800-53r4_low
   - 800-53r4_moderate
   - 800-53r4_high
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf    
+  - preliminary
 mobileconfig: true
 mobileconfig_info:
   com.apple.mobiledevice.passwordpolicy:
