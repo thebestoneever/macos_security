@@ -1,0 +1,35 @@
+id: sysprefs_wake_for_network_disable
+title: "Disable Wake For Network Access"
+discussion: |
+  Prevents the computer from waking for network access. This prevents the system from being controlled externally.
+check: |
+  /usr/bin/pmset -g custom | /usr/bin/awk '/womp/ { sum+=$2 } END {print sum}'
+result:
+  integer: 0
+fix: |
+  [source,bash]
+  ----
+  /usr/bin/pmset -a womp 0
+  ----
+references:
+  cce:
+    - N/A
+  800-53r4:
+    - N/A
+  disa_stig:
+    - N/A
+  srg:
+    - N/A
+  cci:
+    - N/A    
+  800-171r2:
+    - N/A
+macOS:
+  - "11.0"
+tags:
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf
+  - preliminary
+mobileconfig: false
+mobileconfig_info:

@@ -1,0 +1,39 @@
+id: os_sshd_max_auth_tries
+title: "Limit of Four on the Number of Authentication Attempts for SSH"
+discussion: |
+  A limit of four authentication attempts before disconnecting the client _MUST_ be set. The maxAuthTries setting _MUST_ be set to 4.
+
+  NOTE: /etc/ssh/sshd_config will be automatically modified to its original state following any update or major upgrade to the operating system.
+check: |
+  /usr/bin/grep -Ec '^MaxAuthTries 4' /etc/ssh/sshd_config 
+result:
+  integer: 1
+fix: |
+  The following commands must be run to disable passcode based authentication for SSHD: 
+  [source,bash]
+  ----
+  /usr/bin/grep -q '^MaxAuthTries' /etc/ssh/sshd_config && /usr/bin/sed -i.bak  's/.^MaxAuthTries.*/MaxAuthTries 4/' /etc/ssh/sshd_config || /bin/echo 'MaxAuthTries 4' >> /etc/ssh/sshd_config; /bin/launchctl kickstart -k system/com.openssh.sshd
+  ----
+references:
+  cce:
+    - n/a
+  cci:
+    - n/a
+  800-53r4:
+    - n/a
+  srg: 
+    - n/a
+  disa_stig:
+    - n/a
+  800-171r2:
+    - n/a
+macOS:
+  - "11.0"
+tags:
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf
+  - preliminary
+mobileconfig: false
+mobileconfig_info:
+

@@ -1,0 +1,34 @@
+id: sysprefs_dock_autohide_enforce
+title: "Enforce Dock Autohide"
+discussion: |
+  The dock _MUST_ be configured to autohide.
+
+  This rule forces the dock to automatically hide, which reduces information leakage by not displaying running applications.
+check: |
+  /usr/bin/profiles -P -o stdout | /usr/bin/grep -c 'TMAutomaticTimeOnlyEnabled = 1'
+result:
+  integer: 1
+fix: |
+  This is implemented by a Configuration Profile.
+references:
+  cce:
+    - N/A
+  cci: 
+    - N/A
+  800-53r4: 
+    - N/A
+  srg: 
+    - N/A
+  disa_stig: 
+    - N/A
+  800-171r2:
+    - N/A
+macOS:
+  - "11.0"
+tags:
+  - 800-179_sslf
+  - preliminary
+mobileconfig: true
+mobileconfig_info:
+  com.apple.dock:
+    autohide: true

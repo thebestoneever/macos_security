@@ -1,0 +1,46 @@
+id: sysprefs_bluetooth_disable_wake_computer
+title: "Disable Bluetooth Wake Computer"
+discussion: |
+  Bluetooth devices _MUST_ be prevented from waking the computer. 
+
+  Prevents malicious users from controlling the power state of the system. This can be mitigated by disabling the ability to wake a device using Bluetooth.
+
+  [NOTE] 
+  ====
+  The check and fix are for the currently logged in user. To get the currently logged in user, run the following.
+  [source,bash]
+  ----
+  CURRENT_USER=$( scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
+  ----
+  ====
+check: |
+  /usr/bin/sudo -u "$CURRENT_USER" /usr/bin/defaults -currentHost read com.apple.Bluetooth RemoteWakeEnabled
+result:
+  boolean: 0
+fix: |
+  [source,bash]
+  ----
+  /usr/bin/sudo -u "$CURRENT_USER" /usr/bin/defaults -currentHost write com.apple.Bluetooth RemoteWakeEnabled -bool false
+  ----
+references:
+  cce:
+    - n/a
+  cci: 
+    - N/A
+  800-53r4: 
+    - AC-18
+    - CM-2
+  srg: 
+    - n/a
+  disa_stig: 
+    -
+  800-171r2:
+    - n/a
+macOS:
+  - "11.0"
+tags:
+  - 800-179_sslf
+  - preliminary
+mobileconfig: false
+mobileconfig_info:
+

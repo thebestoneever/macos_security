@@ -1,0 +1,40 @@
+id: sysprefs_firewall_signed_software_disable
+title: "Disallow Downloaded Signed Software to Receive Incoming Connections"
+discussion: |
+  The firewall _MUST_ be configured to disallow downloaded signed software to receive incoming connections. 
+  
+  [IMPORTANT]
+  ====
+  Disallowing downloaded signed software may prevent certain remote mechanisms used for maintenance and compliance scanning from properly functioning. Information System Security Officers (ISSOs) are advised to first fully weigh the potential risks posed to their organization before opting not to disallow signed software to receive incoming connections.
+  ====
+check: |
+  /usr/libexec/ApplicationFirewall/socketfilterfw --getallowsigned | /usr/bin/grep -c "Automatically allow built-in signed software DISABLED"
+result:
+  integer: 1
+fix: |
+  [source,bash]
+  ----
+  /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off 
+  ----
+references:
+  cce:
+    - N/A
+  800-53r4:
+    - N/A
+  srg:
+    - N/A
+  cci:
+    - N/A
+  disa_stig:
+    - N/A
+  800-171r2:
+    - N/A
+macOS:
+  - "11.0"
+tags:
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf
+  - preliminary
+mobileconfig: false
+mobileconfig_info:

@@ -1,0 +1,37 @@
+id: sysprefs_firewall_set_logging_detail
+title: "Configure Firewall Logging Level"
+discussion: |
+  The firewall logging level _MUST_ be configured to detail.
+
+  Increasing the logging level offers additional insight into the system's network traffic.
+check: |
+  /usr/libexec/ApplicationFirewall/socketfilterfw --getloggingopt | /usr/bin/grep -c "Log Option is detail"
+result:
+  integer: 1
+fix: |
+  [source,bash]
+  ----
+  /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingopt detail
+  ----
+references:
+  cce:
+    - N/A
+  800-53r4:
+    - N/A
+  srg:
+    - N/A
+  cci:
+    - N/A
+  disa_stig:
+    - N/A
+  800-171r2:
+    - N/A
+macOS:
+  - "11.0"
+tags:
+  - 800-179_standalone
+  - 800-179_managed
+  - 800-179_sslf
+  - preliminary
+mobileconfig: false
+mobileconfig_info:
