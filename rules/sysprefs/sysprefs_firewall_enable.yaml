@@ -46,6 +46,9 @@ tags:
   - 800-53r4_moderate
   - 800-53r4_high
   - stig
+  - 800-179_standalone
+  - 800-179_managed    
+  - preliminary
 severity: "medium"
 mobileconfig: false
 mobileconfig_info:
