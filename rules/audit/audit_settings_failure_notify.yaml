@@ -30,6 +30,7 @@ references:
 macOS:
   - "11.0"
 tags:
+  - script
   - 800-171
   - 800-53r4_high
   - stig

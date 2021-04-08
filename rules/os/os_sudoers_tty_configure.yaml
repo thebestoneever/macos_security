@@ -27,6 +27,7 @@ references:
 macOS:
   - "11.0"
 tags:
+  - script
   - cnssi-1253
   - stig
 severity: "high"

@@ -27,6 +27,7 @@ references:
 macOS:
   - "11.0"
 tags:
+  - script
   - none
 mobileconfig: false
 mobileconfig_info:
